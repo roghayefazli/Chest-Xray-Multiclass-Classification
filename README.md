@@ -26,16 +26,6 @@ The model classifies chest X-ray images into three categories:
 * Normal
 * Viral Pneumonia
 
----
-
-## 📂 Repository Structure
-
-```
-.
-├── resnet.ipynb          # Main notebook
-├── README.md
-└── dataset/              # Dataset (not included)
-```
 
 ---
 
