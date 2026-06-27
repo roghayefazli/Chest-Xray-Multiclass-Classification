@@ -1,39 +1,132 @@
-# Lung-Cancer-prediction-resnet-base
+# 🫁 Lung Disease Classification using ResNet50 Transfer Learning
 
-### ResNet-Based Image Classification
+A deep learning project for multi-class chest X-ray image classification using **Transfer Learning** with **ResNet50** in TensorFlow/Keras.
 
-This Jupyter Notebook, `resnet.ipynb`, demonstrates the use of a pre-trained ResNet50 model for image classification, specifically for a task involving "ill" and "normal" patients. The notebook leverages transfer learning, a powerful technique for leveraging models trained on large datasets for new, related tasks.
+The project demonstrates an end-to-end medical image classification pipeline, including data preprocessing, transfer learning, fine-tuning, model evaluation, and visualization.
 
-#### Project Overview
+---
 
-The project uses the ResNet50 architecture, a state-of-the-art model for image recognition, to classify images into one of two categories: `ill` or `normal`. The notebook outlines the following steps:
+## 🚀 Project Highlights
 
-1.  **Environment Setup:** It starts by mounting Google Drive, indicating that the dataset is stored there.
-2.  **Library Imports:** It imports necessary libraries from TensorFlow and Keras, including the `ResNet50` model and functions for preprocessing, layers (`Flatten`, `Dense`), and handling images.
-3.  **Data Path Specification:** The paths to the training and validation datasets are defined, assuming a directory structure with subfolders for each class (`/content/data/train/ill`, `/content/data/train/normal`, etc.).
-4.  **Model Configuration:**
-      * The script loads the pre-trained `ResNet50` model, likely without the top classification layer.
-      * New `Flatten` and `Dense` layers are added on top of the pre-trained base to create a custom classification head for the specific task.
-      * The number of output classes is inferred from the number of subdirectories in the training data, which in this case appears to be two (`ill` and `normal`).
-      * The images are resized to 50x50 pixels before being fed to the model.
-5.  **Data Loading and Preprocessing:** The `ImageDataGenerator` is used to load images directly from the specified directories and apply necessary preprocessing steps.
-6.  **Training:** The model is compiled with an optimizer and loss function (the specific ones are not shown in the provided code snippets but would be defined here). The model is then trained on the training data.
+* ✅ Transfer Learning using **ResNet50**
+* ✅ Multi-class chest X-ray classification
+* ✅ Image preprocessing and normalization
+* ✅ Fine-tuning of pretrained CNN
+* ✅ Training and validation monitoring
+* ✅ Model evaluation with multiple classification metrics
+* ✅ Easy-to-extend notebook implementation
 
-#### Requirements
+---
 
-This project requires the following Python libraries:
+## 🩺 Classification Classes
 
-  * `tensorflow`
-  * `keras`
-  * `numpy`
-  * `matplotlib`
+The model classifies chest X-ray images into three categories:
 
-#### How to Use
+* Lung Opacity
+* Normal
+* Viral Pneumonia
 
-1.  **Dataset Structure:** Ensure your dataset is organized into `train` and `test` directories, with subdirectories inside each for every class (e.g., `train/ill`, `train/normal`).
-2.  **Dependencies:** Install the required libraries using pip:
-    ```bash
-    pip install tensorflow keras numpy matplotlib
-    ```
-3.  **Google Colab:** The notebook is designed to be run in a Google Colab environment, so you will need to open it there and connect to your Google Drive to access the dataset.
-4.  **Execution:** Run all the cells in the notebook sequentially. The script will handle everything from loading the data to training the model.
+---
+
+## 📂 Repository Structure
+
+```
+.
+├── resnet.ipynb          # Main notebook
+├── README.md
+└── dataset/              # Dataset (not included)
+```
+
+---
+
+## 🛠️ Technologies
+
+* Python
+* TensorFlow
+* Keras
+* NumPy
+* Matplotlib
+* Google Colab
+
+---
+
+## 📊 Model Performance
+
+| Metric            |    Score |
+| ----------------- | -------: |
+| Accuracy          |  **81%** |
+| Weighted F1-score | **0.81** |
+| Macro F1-score    | **0.81** |
+
+### Classification Report
+
+| Class           | Precision |   Recall | F1-score |
+| --------------- | --------: | -------: | -------: |
+| Lung Opacity    |      0.78 |     0.76 |     0.77 |
+| Normal          |      0.83 |     0.71 |     0.77 |
+| Viral Pneumonia |  **0.82** | **0.97** | **0.89** |
+
+---
+
+## 📈 Evaluation
+
+The notebook includes:
+
+* Training & Validation Accuracy
+* Training & Validation Loss
+* Classification Report
+* Model Prediction Examples
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/<your-username>/Lung-Cancer-prediction-resnet-base.git
+cd Lung-Cancer-prediction-resnet-base
+```
+
+Install dependencies:
+
+```bash
+pip install tensorflow keras numpy matplotlib
+```
+
+---
+
+## ▶️ Run
+
+Open the notebook in **Google Colab** or Jupyter Notebook.
+
+Update the dataset paths and execute all cells sequentially.
+
+---
+
+## 🔮 Future Improvements
+
+* Add data augmentation
+* Compare ResNet50 with EfficientNet and DenseNet
+* Apply Grad-CAM for explainable AI
+* Export trained model to ONNX
+* Hyperparameter optimization
+* Model quantization for edge deployment
+
+---
+
+## 📄 License
+
+This project is released under the MIT License.
+
+---
+
+## 👩‍💻 Author
+
+**Roghaye Fazli**
+
+M.Sc. Student in Artificial Intelligence
+
+GitHub: https://github.com/roghayefazli
+
+LinkedIn: https://linkedin.com/in/roghaye-fazli-662566281
